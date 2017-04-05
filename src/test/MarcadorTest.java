@@ -7,12 +7,14 @@ import control.Marcador;
 import modelo.Casilla;
 import modelo.Tablero;
 
+import control.Marcador;
+
 public class MarcadorTest {
 
 
 	@Test
 	public void testSincronizar() {
-		
+
 		Tablero instancia=new Tablero(3, 3);
 		Casilla[][] casillas = instancia.getCasillas();
 		JButton botones[][]=new JButton[3][3];
@@ -39,6 +41,7 @@ public class MarcadorTest {
 			}
 		}
 		
+
 	}
 
 }

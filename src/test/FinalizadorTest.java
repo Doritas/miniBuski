@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import control.Finalizador;
+
 import modelo.Casilla;
+
 import modelo.Tablero;
 
 public class FinalizadorTest {
@@ -24,6 +26,11 @@ public class FinalizadorTest {
 	}
 
 	@Test
+
+	public void testEstado() {
+		
+		
+
 	public void testEstadoPerdido() {
 		Tablero tablero = new Tablero(3, 3);
 		Casilla[][] casillas = tablero.getCasillas();
@@ -53,6 +60,7 @@ public class FinalizadorTest {
 
 		int estado = instancia.estado();
 		assertEquals(Finalizador.GANADO, estado);
+
 
 	}
 
