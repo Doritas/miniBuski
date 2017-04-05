@@ -25,11 +25,7 @@ public class FinalizadorTest {
 
 	}
 
-	@Test
-
-	public void testEstado() {
-		
-		
+	@Test	
 
 	public void testEstadoPerdido() {
 		Tablero tablero = new Tablero(3, 3);
