@@ -20,11 +20,19 @@ public class Marcador {
 		}
 	}
 
+
 	private void marcarBoton(JButton boton, Casilla casilla) {
 
+		if(!casilla.isMarcada())
+			boton.setIcon(null);
+	
 		if (casilla.isVelada()) {
 			boton.setText("");
-
+			if (casilla.isMarcada()) {
+				ImageIcon icono_bandera = new ImageIcon("bandera.gif");
+				boton.setIcon(icono_bandera);
+				
+			}
 		} else {
 
 			if (casilla.isMinas()) {
@@ -41,8 +49,9 @@ public class Marcador {
 				boton.setBackground(Color.CYAN);
 			}
 		}
-
+		
 	}
+	
 
 	private void darColor(JButton boton, Casilla casilla) {
 

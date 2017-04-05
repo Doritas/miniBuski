@@ -37,22 +37,31 @@ public class ParaUIBusqui extends UIbusqui {
 
 	}
 
+	
 	MouseListener listenerRaton = new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			JButton boton = (JButton) e.getSource();
+			Coordenada coord = auxiliar.obtenerCoordenada(boton);
+			Casilla casilla=tablero.getCasilla(coord);
+			
 			System.out.println(e.getButton());
 
-			if (e.getButton() == MouseEvent.BUTTON3) {
-
-				ImageIcon icono_bandera = new ImageIcon("bandera.gif");
-				((AbstractButton) e.getSource()).setIcon(icono_bandera);
-							
+			if (e.getButton() == MouseEvent.BUTTON3 ) {
+				if (casilla.isMarcada()) {
+					casilla.setMarcada(false);
+					
+				}else {
+					casilla.setMarcada(true);
+				}
 
 			}
+			else{
+				casilla.setMarcada(false);
+			}
+			marcador.sincronizar(botones, tablero.getCasillas());
 		}
 	};
-	
-	
 
 	ActionListener listener = new ActionListener() {
 
